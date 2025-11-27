@@ -39,15 +39,27 @@
 .hero {
   min-height: 100vh;
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
   align-items: center;
   padding: 80px;
   color: white;
  
 }
 .hero img {
+  max-width: 100%;
   width: 320px;
-}
+}      
+
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+
+
 
 
 .hero-image img:hover {
@@ -95,3 +107,6 @@
 .hero {
   margin-top: 80px;
 }
+
+
+

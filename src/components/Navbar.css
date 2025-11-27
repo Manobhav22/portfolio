@@ -17,7 +17,6 @@
   font-size: 26px;
   font-weight: bold;
   color: #38bdf8;
-
 }
 
 /* ===== DESKTOP MENU ===== */
@@ -25,8 +24,9 @@
   display: flex;
   gap: 25px;
   list-style: none;
-}
+}   /* ⭐ YOU MISSED THIS EARLIER */
 
+/* This block was causing the error */
 .nav-links li a {
   color: #fff;
   text-decoration: none;
@@ -45,9 +45,10 @@
   border: none;
   color: white;
   cursor: pointer;
+  font-size: 30px;
 }
 
-/* ===== MOBILE MENU ===== */
+/* ===== MOBILE MENU (DEFAULT) ===== */
 .mobile-menu {
   display: none;
 }
@@ -74,6 +75,9 @@
     flex-direction: column;
     gap: 20px;
     transform: translateX(100%);
+    transition: 0.3s ease-in-out;
+    z-index: 9999;
+    overflow-y: auto;
   }
 
   .mobile-menu.open {
