@@ -1,112 +1,105 @@
-.App {
-  text-align: center;
+/* Global reset for predictable box-sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Body backgrounds and font */
+body {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #071428 0%, #071428 100%);
+  color: #e6eef6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* Hero section */
 .hero {
   min-height: 100vh;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 80px;
+  padding: 110px 80px 80px; /* top accounts for navbar */
+  gap: 40px;
   color: white;
- 
 }
+
+/* ensure hero children stack on mobile */
+.hero .hero-content {
+  max-width: 900px;
+}
+
+/* Profile image */
 .hero img {
   max-width: 100%;
-  width: 320px;
-}      
-
-
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
-
-
-
-
-
-.hero-image img:hover {
-  transform: scale(1.06);
-  transition: 0.3s ease-in-out;
+  width: 280px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 40px rgba(0,200,255,0.08);
 }
 
-#hero a img:hover {
-  transform: scale(1.2);
+/* Heading and subheading */
+.hero h1 {
+  font-size: 3rem;
+  line-height: 1.05;
 }
 
-
-
-.navbar {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #0f172a;
-  color: white;
-  z-index: 1000;
+.hero h1 span {
+  color: #00d4ff;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
+.hero h2 {
+  margin-top: 18px;
+  color: #9fe8ff;
   font-weight: 500;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
+/* Social icons in hero */
+.hero .socials {
+  margin-top: 20px;
+  display: flex;
+  gap: 18px;
 }
-.hero {
-  margin-top: 80px;
+
+/* Make images responsive */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
+/* Mobile adjustments */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    padding: 100px 28px 50px;
+    text-align: center;
+    gap: 18px;
+  }
 
+  .hero img {
+    width: 200px;
+  }
 
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 90px 16px 40px;
+  }
+
+  .hero img {
+    width: 150px;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+}

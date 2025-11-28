@@ -25,11 +25,15 @@ export default function Navbar() {
       </ul>
 
       {/* Hamburger Button */}
-      <button className="menu-btn" onClick={() => setOpen(!open)}>
+      <button
+        className="menu-btn"
+        aria-label="Toggle menu"
+        onClick={() => setOpen(!open)}
+      >
         {open ? <X size={28} /> : <Menu size={28} />}
       </button>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Drawer */}
       <motion.div
         className={`mobile-menu ${open ? "open" : ""}`}
         initial={{ opacity: 0, x: 100 }}
