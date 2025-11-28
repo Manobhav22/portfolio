@@ -449,3 +449,12 @@ input:focus, textarea:focus{
     padding: 20px;
   }
 }
+/* STOP the right-side white space */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Make sure no element exceeds screen width */
+* {
+  box-sizing: border-box;
+}
