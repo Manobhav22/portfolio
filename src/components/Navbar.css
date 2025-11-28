@@ -1,94 +1,78 @@
-/* ===== NAVBAR MAIN ===== */
+/* Navbar Container */
 .navbar {
   width: 100%;
-  padding: 18px 40px;
-  background: #0f172a;
-  color: #fff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
+  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #0f172a;
+  z-index: 999;
 }
 
+/* Logo */
 .logo {
-  font-size: 26px;
+  color: white;
+  font-size: 1.6rem;
   font-weight: bold;
-  color: #38bdf8;
 }
 
-/* ===== DESKTOP MENU ===== */
+/* Desktop Menu */
 .nav-links {
   display: flex;
-  gap: 25px;
-  list-style: none;
-}   /* ⭐ YOU MISSED THIS EARLIER */
+  gap: 30px;
+}
 
-/* This block was causing the error */
 .nav-links li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 17px;
-  transition: 0.3s;
+  color: white;
+  font-size: 1rem;
 }
 
-.nav-links li a:hover {
-  color: #38bdf8;
+/* HIDE DESKTOP MENU ON MOBILE */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
 }
 
-/* ===== HAMBURGER BUTTON ===== */
+/* Hamburger Button */
 .menu-btn {
   display: none;
   background: none;
   border: none;
   color: white;
   cursor: pointer;
-  font-size: 30px;
 }
 
-/* ===== MOBILE MENU (DEFAULT) ===== */
-.mobile-menu {
-  display: none;
-}
-
-/* ===== MOBILE RESPONSIVE ===== */
+/* SHOW HAMBURGER ON MOBILE */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
   .menu-btn {
     display: block;
   }
+}
 
-  .mobile-menu {
-    position: fixed;
-    top: 70px;
-    right: 0;
-    width: 70%;
-    height: 100vh;
-    padding: 20px;
-    background: #1e293b;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    transform: translateX(100%);
-    transition: 0.3s ease-in-out;
-    z-index: 9999;
-    overflow-y: auto;
-  }
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 70px;
+  right: -100%;
+  background: #0f172a;
+  width: 70%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: right 0.3s ease-in-out;
+}
 
-  .mobile-menu.open {
-    transform: translateX(0);
-  }
+.mobile-menu a {
+  color: white;
+  font-size: 1.2rem;
+}
 
-  .mobile-menu a {
-    color: white;
-    font-size: 20px;
-    text-decoration: none;
-    padding: 10px 0;
-    border-bottom: 1px solid #334155;
-  }
+/* Slide in when open */
+.mobile-menu.open {
+  right: 0;
 }

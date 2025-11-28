@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import "./Navbar.css";
 
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -35,6 +34,7 @@ export default function Navbar() {
         className={`mobile-menu ${open ? "open" : ""}`}
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: open ? 1 : 0, x: open ? 0 : 100 }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
       >
         <a onClick={() => setOpen(false)} href="#hero">Home</a>
         <a onClick={() => setOpen(false)} href="#about">About</a>
