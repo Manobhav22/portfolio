@@ -6,7 +6,7 @@ const projectData = [
     title: "Portfolio Website",
     category: "React",
     desc: "Modern, animated developer portfolio built with React & Framer Motion.",
-    demo: "https://your-demo-link.com",
+    demo: "https://portfolio-manobhav22s-projects.vercel.app/",
     github: "https://github.com/yourrepo",
     img: "portfolio.jpeg",
   },
